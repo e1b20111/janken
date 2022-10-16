@@ -28,7 +28,7 @@ public class JankenController {
    * @param model
    * @return
    */
-  @PostMapping("/Janken")
+  @PostMapping("/janken")
   public String sample25(@RequestParam String name, ModelMap model) {
     model.addAttribute("name", name);
     return "janken.html";
