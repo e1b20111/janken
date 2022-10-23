@@ -15,7 +15,17 @@
   <div th:if="${name}">
     Hi [[${name}]]
   </div>
-  
+
+  <div>
+    <a href="/jankengame?hand=gu">ぐー </a><a href="/jankengame?hand=choki">ちょき </a><a href="/jankengame?hand=pa">ぱー</a>
+  </div>
+
+  <div th:if="${result}">
+    あなたの手 [[${me}]] <br>
+    相手の手 [[${enemy}]] <br>
+    結果 [[${result}]] <br>
+  </div>
+
 </body>
 
 </html>
