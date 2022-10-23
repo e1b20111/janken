@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+<<<<<<< Updated upstream
 <html>
+=======
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.springframework.org/schema/security">
+>>>>>>> Stashed changes
 
 <head>
   <meta charset="utf-8">
@@ -7,14 +11,30 @@
 </head>
 
 <body>
+<<<<<<< Updated upstream
+=======
+  <a href="/logout">ログアウト</a>
+>>>>>>> Stashed changes
   <h1>Janken Game!</h1>
+
+  <!--Entryがあった場合に表示される-->
+  <!--objectはdivの中でEntryオブジェクトのフィールドにアクセスすることを示す-->
+  <div th:if="${entry}">
+    エントリー
+    <ul>
+      <!--eachは所謂for each．この場合entryオブジェクトのusersフィールドにあるすべてのデータを一通り表示する
+        thが指定されているので[]が不要になる-->
+      <li th:each="user : ${entry.users}">[[${user}]]</li>
+    </ul>
+    Hi [[${myname}]]
+  </div>
 
   <!--th:ifと書くと条件文を表す．この例の場合，nameが
         返ってきたとき(nullでないとき)だけdivを表示する
-      th:ifのように対象がthymeleafの変数であることを示している場合は"["で囲まなくて良い-->
+      th:ifのように対象がthymeleafの変数であることを示している場合は"["で囲まなくて良い
   <div th:if="${name}">
     Hi [[${name}]]
-  </div>
+  </div>-->
 
   <div>
     <a href="/jankengame?hand=gu">ぐー </a><a href="/jankengame?hand=choki">ちょき </a><a href="/jankengame?hand=pa">ぱー</a>
