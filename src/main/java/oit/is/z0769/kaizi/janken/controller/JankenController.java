@@ -14,6 +14,9 @@ import oit.is.z0769.kaizi.janken.model.Janken;
  * クラスの前に@Controllerをつけていると，HTTPリクエスト（GET/POSTなど）があったときに，このクラスが呼び出される
  */
 @Controller
+/**
+ * /jankenへのリクエストを扱うクラス authenticateの設定をしていれば， /jankenへのアクセスはすべて認証が必要になる
+ */
 public class JankenController {
 
   @GetMapping("/janken")
@@ -36,7 +39,7 @@ public class JankenController {
   }
 
   /**
-   *  にPOSTでアクセスされるとこのメソッドが呼び出される
+   * にPOSTでアクセスされるとこのメソッドが呼び出される
    *
    * @param hand
    * @param model
