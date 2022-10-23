@@ -8,11 +8,14 @@ import org.springframework.stereotype.Component;
 public class Entry {
   ArrayList<String> users = new ArrayList<>();
   String myname;
+  int numuser = 0;
 
   public void addUser(String name) {
+    this.numuser++;
     // 同名のユーザが居たら何もせずにreturn
     for (String s : this.users) {
       if (s.equals(name)) {
+        this.numuser--;
         return;
       }
     }
@@ -36,6 +39,14 @@ public class Entry {
 
   public void setMyName(String name) {
     this.myname = name;
+  }
+
+  public int getNumUser() {
+    return numuser;
+  }
+
+  public void setNumUser(int numuser) {
+    this.numuser = numuser;
   }
 
 }

@@ -41,10 +41,6 @@ public class JankenController {
   }
 
   /**
-   * <<<<<<< HEAD
-   * <<<<<<< Updated upstream
-   * にPOSTでアクセスされるとこのメソッドが呼び出される
-   * =======
    *
    * @param model Thymeleafにわたすデータを保持するオブジェクト
    * @param prin  ログインユーザ情報が保持されるオブジェクト
@@ -55,16 +51,14 @@ public class JankenController {
   public String LoginUser(Principal prin, ModelMap model) {
     String loginUser = prin.getName();
     this.entry.addUser(loginUser);
+    model.addAttribute("num", entry.getNumUser());
     model.addAttribute("myname", entry.getMyName());
     model.addAttribute("entry", this.entry);
     return "janken.html";
   }
 
   /**
-   * >>>>>>> Stashed changes
-   * =======
-   * にPOSTでアクセスされるとこのメソッドが呼び出される
-   * >>>>>>> main
+   * POSTでアクセスされるとこのメソッドが呼び出される
    *
    * @param hand
    * @param model
