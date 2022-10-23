@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import oit.is.z0769.kaizi.janken.model.Janken;
+
 /**
  * JankenController
  *
@@ -14,10 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class JankenController {
 
-
-  @GetMapping("/Janken")
+  @GetMapping("/janken")
   public String Janken() {
-    return "Janken.html";
+    return "janken.html";
   }
 
   /**
@@ -29,8 +30,27 @@ public class JankenController {
    * @return
    */
   @PostMapping("/janken")
-  public String sample25(@RequestParam String name, ModelMap model) {
+  public String JankenTitle(@RequestParam String name, ModelMap model) {
     model.addAttribute("name", name);
     return "janken.html";
   }
+
+  /**
+   *  にPOSTでアクセスされるとこのメソッドが呼び出される
+   *
+   * @param hand
+   * @param model
+   * @return
+   *
+   */
+  @GetMapping("/jankengame")
+  public String JankenGame(@RequestParam String hand, ModelMap model) {
+    Janken Janken = new Janken(hand);
+
+    model.addAttribute("me", Janken.getMe());
+    model.addAttribute("enemy", Janken.getEne());
+    model.addAttribute("result", Janken.getResult());
+    return "janken.html";
+  }
+
 }
